@@ -11,13 +11,21 @@ public class OpenGate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if(Input.GetKeyDown("space") && anim.GetBool("isOpen") == false)
+	if(Input.GetKeyDown("space"))
+        {
+            PlayAnim();
+        }
+	}
+
+    void PlayAnim()
+    {
+        if (anim.GetBool("isOpen") == false)
         {
             anim.SetBool("isOpen", true);
         }
-    else
+        else if (anim.GetBool("isOpen") == true)
         {
             anim.SetBool("isOpen", false);
         }
-	}
+    }
 }
