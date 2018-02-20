@@ -10102,6 +10102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20b610fe03ae664799e4b58da255fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StatUpdateDelay: 5
   Hunger: 10
   Hydration: 5
   Affection: 0
