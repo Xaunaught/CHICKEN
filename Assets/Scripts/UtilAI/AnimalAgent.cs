@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class AnimalAgent : MonoBehaviour
 {
-
+	public float StatUpdateDelay;
 	public float Hunger;
 	public float Hydration;
 	public float Affection;
@@ -23,7 +24,9 @@ public class AnimalAgent : MonoBehaviour
 	private void Start()
 	{
 		NavMeshAgent = GetComponent<NavMeshAgent>();
+		StartCoroutine("StatsUpdate");
 	}
+
 
 	private void Update()
 	{
@@ -53,7 +56,15 @@ public class AnimalAgent : MonoBehaviour
 		Debug.Log("Hit object");
 		if (other.CompareTag("Food"))
 		{
-			Hunger = 0;
+			//Hunger = 0;
 		}
+	}
+
+	IEnumerator StatsUpdate()
+	{
+		//TODO: update all of the stats
+		Hunger += Random.Range(0,5);
+		yield return new WaitForSeconds(StatUpdateDelay);
+		StartCoroutine("StatsUpdate");
 	}
 }
