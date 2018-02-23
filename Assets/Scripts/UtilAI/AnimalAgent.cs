@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -12,9 +14,11 @@ public class AnimalAgent : MonoBehaviour
 	public float Hydration;
 	public float Affection;
 	public float Health;
+	
+	private GameObject _closestResource;
 
-	public GameObject FoodSource;
-	public GameObject WaterSource;
+
+	public GameObject FoodSources;
 
 	public NavMeshAgent NavMeshAgent;
 	
@@ -30,41 +34,76 @@ public class AnimalAgent : MonoBehaviour
 
 	private void Update()
 	{
-		Calculate();
-		_currentAction.UpdateAction(this);
+		var best = Calculate();
+		
+		//--Update Current Action--\\
+		if (best != _currentAction)
+		{
+			if (_currentAction)
+				_currentAction.Exit(this); //do that action's exit funtion
+			_currentAction = best; //switch to best action
+			if (_currentAction)
+				_currentAction.Enter(this); //do new action's enter function 
+		}
+		if (_currentAction) //If not null
+			_currentAction.UpdateAction(this); //Do the current action's Update Fuction
 		
 	}
 
-	void Calculate()
+	private AIAction Calculate()
 	{
 		float bestValue = 0;
-		foreach (AIAction action in Actions)
+		AIAction action = null;
+		foreach (var a in Actions)
 		{
-			float value = action.Evaluate(this);
+			var value = a.Evaluate(this);
 
-			action.Urgency = value;
-			if (_currentAction == null || value > bestValue)
+			a.Urgency = value;
+			if (action == null || value > bestValue)
 			{
-				_currentAction = action;
+				action = a;
 				bestValue = value;
 			}
 		}
+
+		return action;
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("Hit object");
 		if (other.CompareTag("Food"))
 		{
-			//Hunger = 0;
+			Hunger = 0;
+			//TODO: Play eating animation
+			_closestResource.GetComponent<ResourceManager>().Supply = false;
 		}
 	}
 
-	IEnumerator StatsUpdate()
+	private IEnumerator StatsUpdate()
 	{
 		//TODO: update all of the stats
 		Hunger += Random.Range(0,5);
 		yield return new WaitForSeconds(StatUpdateDelay);
 		StartCoroutine("StatsUpdate");
+	}
+
+	public GameObject GetTarget()
+	{
+		ResourceManager[] targetList = FoodSources.GetComponentsInChildren<ResourceManager>();
+		Debug.Log(targetList.Length + " food sources");
+		float shortestDistance = Mathf.Infinity;
+		
+		foreach (var target in targetList)
+		{
+			float distance = Vector3.Distance(target.transform.position, transform.position);
+			if (distance < shortestDistance && target.Supply)
+			{
+				Debug.Log("Something was found to be shorter");
+				_closestResource = target.gameObject;
+				shortestDistance = distance;
+			}
+		}
+
+		return _closestResource;
 	}
 }

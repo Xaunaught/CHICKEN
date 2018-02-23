@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: a589b65b948a88e489a1de36f488d4c9
+timeCreated: 1519179857
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: ankle_L_jnt
+    100002: ankle_R_jnt
+    100004: cheek_L_end
+    100006: cheek_L_jnt
+    100008: cheek_R_end
+    100010: cheek_R_jnt
+    100012: chest_jnt
+    100014: clavicle_L_jnt
+    100016: clavicle_R_jnt
+    100018: ear_L_end
+    100020: ear_L_jnt
+    100022: ear_R_end
+    100024: ear_R_jnt
+    100026: elbow_L_jnt
+    100028: elbow_R_jnt
+    100030: foot_end
+    100032: foot_end 1
+    100034: foot_end 2
+    100036: foot_end 3
+    100038: foot_L_jnt
+    100040: foot_L_jnt 1
+    100042: foot_R_jnt
+    100044: foot_R_jnt 1
+    100046: head_end
+    100048: head_jnt
+    100050: hip_L_jnt
+    100052: hip_R_jnt
+    100054: jaw_end
+    100056: jaw_jnt
+    100058: knee_L_jnt
+    100060: knee_R_jnt
+    100062: neck_01_jnt
+    100064: neck_02_jnt
+    100066: //RootNode
+    100068: otter_Body
+    100070: otter_Eye_L
+    100072: otter_Eye_R
+    100074: Otter_GEO
+    100076: Otter_RIG
+    100078: root_jnt
+    100080: scapula_L_end
+    100082: scapula_L_jnt
+    100084: scapula_R_end
+    100086: scapula_R_jnt
+    100088: shoulder_L_jnt
+    100090: shoulder_R_jnt
+    100092: spine_01_jnt
+    100094: spine_02_jnt
+    100096: tail_01_jnt
+    100098: tail_02_jnt
+    100100: tail_03_jnt
+    100102: tail_04_jnt
+    100104: tail_05_jnt
+    100106: tail_end
+    100108: wrist_L_jnt
+    100110: wrist_R_jnt
+    400000: ankle_L_jnt
+    400002: ankle_R_jnt
+    400004: cheek_L_end
+    400006: cheek_L_jnt
+    400008: cheek_R_end
+    400010: cheek_R_jnt
+    400012: chest_jnt
+    400014: clavicle_L_jnt
+    400016: clavicle_R_jnt
+    400018: ear_L_end
+    400020: ear_L_jnt
+    400022: ear_R_end
+    400024: ear_R_jnt
+    400026: elbow_L_jnt
+    400028: elbow_R_jnt
+    400030: foot_end
+    400032: foot_end 1
+    400034: foot_end 2
+    400036: foot_end 3
+    400038: foot_L_jnt
+    400040: foot_L_jnt 1
+    400042: foot_R_jnt
+    400044: foot_R_jnt 1
+    400046: head_end
+    400048: head_jnt
+    400050: hip_L_jnt
+    400052: hip_R_jnt
+    400054: jaw_end
+    400056: jaw_jnt
+    400058: knee_L_jnt
+    400060: knee_R_jnt
+    400062: neck_01_jnt
+    400064: neck_02_jnt
+    400066: //RootNode
+    400068: otter_Body
+    400070: otter_Eye_L
+    400072: otter_Eye_R
+    400074: Otter_GEO
+    400076: Otter_RIG
+    400078: root_jnt
+    400080: scapula_L_end
+    400082: scapula_L_jnt
+    400084: scapula_R_end
+    400086: scapula_R_jnt
+    400088: shoulder_L_jnt
+    400090: shoulder_R_jnt
+    400092: spine_01_jnt
+    400094: spine_02_jnt
+    400096: tail_01_jnt
+    400098: tail_02_jnt
+    400100: tail_03_jnt
+    400102: tail_04_jnt
+    400104: tail_05_jnt
+    400106: tail_end
+    400108: wrist_L_jnt
+    400110: wrist_R_jnt
+    2100000: lambert1
+    4300000: otter_Body
+    4300002: otter_Eye_R
+    4300004: otter_Eye_L
+    9500000: //RootNode
+    13700000: otter_Body
+    13700002: otter_Eye_L
+    13700004: otter_Eye_R
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
