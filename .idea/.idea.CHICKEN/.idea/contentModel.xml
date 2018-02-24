@@ -461,6 +461,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="OpenGate.cs" t="Include" />
+          <e p="PlayerScript.cs" t="Include" />
           <e p="UtilAI" t="Include">
             <e p="Affection.cs" t="Include" />
             <e p="AIAction.cs" t="Include" />

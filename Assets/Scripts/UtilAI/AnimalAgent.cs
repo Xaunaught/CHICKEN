@@ -69,15 +69,7 @@ public class AnimalAgent : MonoBehaviour
 		return action;
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Food"))
-		{
-			Hunger = 0;
-			//TODO: Play eating animation
-			_closestResource.GetComponent<ResourceManager>().Supply = false;
-		}
-	}
+
 
 	private IEnumerator StatsUpdate()
 	{
@@ -96,7 +88,7 @@ public class AnimalAgent : MonoBehaviour
 		foreach (var target in targetList)
 		{
 			float distance = Vector3.Distance(target.transform.position, transform.position);
-			if (distance < shortestDistance && target.Supply)
+			if (distance < shortestDistance && target.GetSupply())
 			{
 				Debug.Log("Something was found to be shorter");
 				_closestResource = target.gameObject;

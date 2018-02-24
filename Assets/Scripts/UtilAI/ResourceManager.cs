@@ -13,7 +13,7 @@ public class ResourceManager : VRTK_InteractableObject
 	public bool Supply;
 	public GameObject MiniCube;
 	public Color OriginalColor;
-	private Material MiniCubeMat;
+	private Material _miniCubeMat;
 	
 
 	public override void StartUsing(VRTK_InteractUse usingObject)
@@ -28,22 +28,32 @@ public class ResourceManager : VRTK_InteractableObject
 		base.StopUsing(usingObject);
 	}
 
-	private void Update()
+	protected override void Update()
 	{
 		if (Supply)
 		{
-			MiniCubeMat.color = Color.green;
+			_miniCubeMat.color = Color.green;
 		}
 
 		if (!Supply)
 		{
-			MiniCubeMat.color = OriginalColor;
+			_miniCubeMat.color = OriginalColor;
 		}
 	}
 
 	private void Start()
 	{
-		MiniCubeMat = MiniCube.GetComponent<Renderer>().material;
-		OriginalColor = MiniCubeMat.color;
+		_miniCubeMat = MiniCube.GetComponent<Renderer>().material;
+		OriginalColor = _miniCubeMat.color;
+	}
+
+	public bool GetSupply()
+	{
+		return Supply;
+	}
+
+	public void SetSupply(bool s)
+	{
+		Supply = s;
 	}
 }
